@@ -1,0 +1,292 @@
+% !TeX program = xelatex
+% ============================================================
+%  Edward Sinclair — Curriculum Vitae
+%  Source-controlled LaTeX — edit freely, commit often.
+%
+%  Compile with:  xelatex edward_sinclair_cv.tex
+%  Requires:  geometry, titlesec, enumitem, hyperref, fontawesome5
+%             (all available in TeX Live / MiKTeX)
+% ============================================================
+
+\documentclass[11pt, a4paper]{article}
+
+% ── Page layout ─────────────────────────────────────────────
+\usepackage[
+  top=18mm, bottom=15mm,
+  left=20mm, right=20mm
+]{geometry}
+
+% ── Typography ───────────────────────────────────────────────
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Calibri}
+\usepackage{microtype}  % improved justification and kerning
+
+% ── Colour ───────────────────────────────────────────────────
+\usepackage[dvipsnames]{xcolor}
+\definecolor{accent}{RGB}{14, 40, 65}   % change this one line to retheme
+
+% ── Section headings ─────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0em}{}
+  [\vspace{-4pt}\color{accent}\rule{\linewidth}{0.6pt}\vspace{2pt}]
+\titlespacing{\section}{0pt}{10pt}{4pt}
+
+% ── Lists ────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize]{
+  leftmargin=1.4em,
+  topsep=2pt,
+  itemsep=1pt,
+  parsep=0pt
+}
+
+% ── Hyperlinks ───────────────────────────────────────────────
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+% ── Footer ───────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\textcolor{gray}{Edward Sinclair}}
+\fancyfoot[R]{\textcolor{gray}{\thepage\ of \pageref{LastPage}}}
+\setlength{\footskip}{8pt}
+
+% ── Icons (optional — remove if fontawesome5 unavailable) ────
+% \usepackage{fontawesome5}
+
+% ── Helpers ─────────────────────────────────────────────────
+\usepackage{tabularx}
+\usepackage{array}
+
+% Tighter paragraph spacing
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+
+% ── Entry macro ──────────────────────────────────────────────
+% Usage: \cventry{Role | Organisation}{Date range}
+\newcommand{\cventry}[2]{%
+  \vspace{4pt}%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{\textit{#2}}
+  \end{tabularx}%
+  \vspace{1pt}%
+}
+
+% ── Skill row macro ──────────────────────────────────────────
+% Usage: \skillrow{Category}{comma-separated items}
+\newcommand{\skillrow}[2]{%
+  \noindent\textbf{#1:} #2\par\vspace{2pt}%
+}
+
+% ============================================================
+\begin{document}
+
+% ── Header ──────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries\color{accent} EDWARD SINCLAIR}\\[4pt]
+  \small
+  02041124645
+  \textbar{}
+  \href{mailto:elrsinclair@gmail.com}{elrsinclair@gmail.com}
+  \textbar{}
+  \href{https://www.linkedin.com/in/edward-sinclair/}{linkedin.com/in/edward-sinclair}
+  \textbar{}
+  Auckland, NZ
+\end{center}
+
+% ── Summary ─────────────────────────────────────────────────
+\section{SUMMARY}
+
+Mechatronics engineer and software developer with experience spanning embedded systems,
+robotics, and test automation. Master of Engineering in Software (submitted, in review)
+from the University of Canterbury, focusing on autonomous drone manipulation in dynamic
+environments.
+
+% ── Education ───────────────────────────────────────────────
+\section{EDUCATION \& QUALIFICATIONS}
+
+\cventry{Master of Engineering (ME) — Software Engineering
+         \textbar{} University of Canterbury}{2025 – 2026 (Submitted)}
+\begin{itemize}
+  \item Tree Motion Prediction and Active Swing Suppression Algorithms for a
+        Drone-Suspended Robotic Chainsaw
+\end{itemize}
+
+\cventry{Bachelor of Engineering (Honours) — Mechatronics Engineering
+         \textbar{} University of Canterbury}{2021 – 2024}
+\begin{itemize}
+  \item Honours Research Project: Schmidt Camera-Telescope for Satellite Tracking
+        (7.22/9.00 GPA)
+\end{itemize}
+
+% ── Work Experience ─────────────────────────────────────────
+\section{WORK EXPERIENCE}
+
+\cventry{ME Thesis Research \textbar{} UC Computer Vision}{April 2025 – May 2026}
+\begin{itemize}
+  \item Developed a Python tree branch motion prediction pipeline applying machine
+        learning, DSP, and frequency-domain analysis to forecast future branch
+        positions, achieving a 73.7\% error improvement over static assumptions and
+        enabling informed drone interception planning
+  \item Designed and validated a drone payload stabilisation controller in NVIDIA Isaac
+        Sim for DJI industrial drones, achieving payload swing under 10° and improving
+        settling times by a factor of 2.5
+  \item Demonstrated live aerial branch cutting to arboriculture industry partners,
+        validating real-world viability and directly inspiring a subsequent Engineering
+        Honours research project
+\end{itemize}
+
+\cventry{Research Associate \textbar{} UC Computer Vision}{January 2025 – April 2025}
+\begin{itemize}
+  \item Engineered multiple prototype robotic chainsaw end-effectors for UAVs using
+        CAD, 3D printing, and hands-on workshop fabrication within a four-week
+        development timeline
+  \item Developed a responsive wireless web interface using a custom Veroboard ESP32
+        microcontroller, C++, HTML, JavaScript, and bidirectional WebSocket
+        communication for real-time remote control of aerial tools
+  \item Delivered a semi-autonomous cutting solution capable of reliably severing
+        60\,mm branches in flight, working independently from concept to physical
+        testing
+\end{itemize}
+
+\cventry{Junior Test Engineer \textbar{} Basis}{November 2023 – December 2024}
+\begin{itemize}
+  \item Built a Python-based test suite for PCB hardware and firmware validation,
+        designed for automated execution in the firmware team's CI/CD pipeline
+  \item Developed driver interfaces for lab equipment (oscilloscopes, power supplies,
+        data loggers, AC sources/loads) to conduct reliable automated electrical and
+        functional tests
+  \item Collaborated with firmware engineers and the verification team to ensure test
+        routines evaluated intended device behaviour and compliance with product
+        standards
+  \item Contributed to large-scale codebases via Git and Jira in a fast-paced,
+        startup-style Agile workflow
+  \item Designed a production-line testing platform using Python, CAD, 3D printing,
+        workshop fabrication, and pogo-pin probing, capable of testing 16 coils per
+        minute
+  \item Constructed test rigs and wired equipment racks in compliance with electrical
+        and safety standards
+\end{itemize}
+
+\cventry{Product Engineer \textbar{} Retail Dimension}{December 2022 – February 2023}
+\begin{itemize}
+  \item Automated SolidWorks library creation using custom VBA macros and REST APIs,
+        delivering over 1000 standardised parts at an estimated 5 minutes saved per
+        part while reducing stock-management errors
+  \item Contributed to CAD modelling for retail fitouts, producing assemblies and
+        technical drawings for fabrication and installation teams
+\end{itemize}
+
+\cventry{Retail Assistant \textbar{} Burnsco}{December 2021 – February 2022}
+\begin{itemize}
+  \item Developed customer-service skills through daily interaction, troubleshooting,
+        and tailored technical advice across a wide range of customers
+  \item Gained hands-on knowledge of marine technology including radios, EPIRBs, solar
+        panels, safety equipment, and battery-charging electronics
+\end{itemize}
+
+% ── Technical Skills ─────────────────────────────────────────
+\section{TECHNICAL SKILLS}
+
+\textbf{Software \& Programming}
+\vspace{2pt}
+
+\skillrow{Languages}{Python, C/C++, HTML, JavaScript, CSS (readily adaptable to others)}
+\skillrow{Tools \& Environments}{VSCode, Git (GitHub/GitLab), CI/CD pipelines, Arduino
+  IDE, PlatformIO, Jupyter, Windows, Linux (Debian), Android Studio, CMake, Docker,
+  NVIDIA Isaac Sim, ROS2}
+\skillrow{Libraries \& Data}{OpenCV, PyTorch, Tkinter, Qt, FreeRTOS, Plotly, Pandas,
+  JSON, NumPy, Scikit-learn}
+\skillrow{Networking}{TCP/IP, HTTP APIs, SSH, NGINX, Tailscale, Wi-Fi, BLE}
+
+\vspace{4pt}
+\textbf{Electrical \& Embedded Systems}
+\vspace{2pt}
+
+\skillrow{Hardware Platforms}{Arduino, Raspberry Pi, STM32, ESP32/ESP8266, NVIDIA Jetson}
+\skillrow{Interfaces \& Peripherals}{UART, I2C, SPI, PWM, ADC/DAC, servos, steppers,
+  BLDC motors, Hall effect sensors}
+\skillrow{Tools \& Skills}{Schematic design, breadboarding, soldering, KiCad, Altium,
+  circuit debugging}
+\skillrow{Instrumentation}{Oscilloscopes, multimeters, power supplies, signal generators}
+
+\vspace{4pt}
+\textbf{Hardware}
+\vspace{2pt}
+
+\skillrow{CAD \& Design}{SolidWorks (weldments, macros), Onshape, SketchUp,
+  PrusaSlicer/Bambu Lab slicers, Blender, CAM tools (basic)}
+\skillrow{Mechanical Skills}{3D printing, mechanical assembly, laser cutting, material
+  knowledge, engineering workshop fabrication and safety}
+
+% ── Key Skills and Competencies ──────────────────────────────
+\section{KEY SKILLS \& COMPETENCIES}
+
+\textbf{Problem Solving.}\enspace
+I take a practical approach across hardware and software issues, working methodically from
+root cause to solution. During my ME, a colleague was unable to activate the UAV chainsaw
+through their app. On inspection, I identified that the app was not correctly transmitting
+a WebSocket heartbeat, which the deadman switch required to enable the tool. Resolving this
+fixed the issue and validated that my safety system was functioning as intended.
+
+\vspace{4pt}
+\textbf{Adaptability \& Resilience.}\enspace
+With a broad mechatronics background and strong emotional intelligence, I am confident in
+shifting between hardware, software, support, and any other challenging tasks. I quickly
+learned new tools and systems outside my work scope throughout my engineering honours
+project, including telescope optics, TLE satellite tracking algorithms, and UI development,
+all to support the project team and keep progress moving.
+
+\vspace{4pt}
+\textbf{Communication.}\enspace
+I communicate technical concepts clearly and adapt my delivery to the audience. At Basis,
+when discrepancies emerged between coil behaviour on my test rig versus installed on PCBs,
+I worked directly with the electrical team to diagnose the issue, walking them through my
+test setup to identify the variable causing the discrepancy. I also presented my internship
+project to the entire company using entertaining analogies for the non-technical audience.
+
+\vspace{4pt}
+\textbf{Self-Management \& Motivation.}\enspace
+I work well independently and manage my time effectively to meet goals. My self-motivation
+is reflected in my 7.22/9.00 GPA and the positive feedback I have received from every
+previous employer.
+
+% ── Hobbies and Interests ────────────────────────────────────
+\section{HOBBIES \& INTERESTS}
+
+\begin{itemize}
+  \item \textbf{Technology:} Aerospace, vehicles, renewable energy, smart devices, and
+        consumer electronics
+  \item \textbf{Sports \& Fitness:} Skiing, mountain biking, hiking, squash,
+        racket/stick sports, weightlifting (4$\times$ per week)
+  \item \textbf{Recreation:} Home labbing, board games, guitar, and outdoor activities
+        with friends
+\end{itemize}
+
+% ── Certifications ───────────────────────────────────────────
+\section{CERTIFICATIONS}
+
+\begin{itemize}
+  \item Current Full New Zealand Driver's Licence
+  \item Workplace First Aider — NZQA standards 6400, 6401, and 6402
+\end{itemize}
+
+% ── Awards ───────────────────────────────────────────────────
+\section{AWARDS}
+
+\begin{itemize}
+  \item UC Software Engineering Research Support Scholarship and UC Hiranga Academic
+        Scholarship
+  \item CSSE Postgraduate Conference Best Masters Presentation Award
+\end{itemize}
+
+\end{document}

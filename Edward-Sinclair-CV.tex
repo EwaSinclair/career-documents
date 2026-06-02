@@ -25,6 +25,7 @@
 % ── Colour ───────────────────────────────────────────────────
 \usepackage[dvipsnames]{xcolor}
 \definecolor{accent}{RGB}{14, 40, 65}   % change this one line to retheme
+\definecolor{footergray}{RGB}{110,110,110} % slightly darker grey for footer text
 
 % ── Section headings ─────────────────────────────────────────
 \usepackage{titlesec}
@@ -55,8 +56,8 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyfoot[C]{\textcolor{gray}{Edward Sinclair}}
-\fancyfoot[R]{\textcolor{gray}{\thepage\ of \pageref{LastPage}}}
+\fancyfoot[C]{\textcolor{footergray}{Edward Sinclair}}
+\fancyfoot[R]{\textcolor{footergray}{\thepage\ of \pageref{LastPage}}}
 \setlength{\footskip}{8pt}
 
 % ── Icons (optional — remove if fontawesome5 unavailable) ────
@@ -92,15 +93,15 @@
 
 % ── Header ──────────────────────────────────────────────────
 \begin{center}
-  {\LARGE\bfseries\color{accent} EDWARD SINCLAIR}\\[4pt]
-  \small
+  {\Huge\color{accent} EDWARD SINCLAIR}\\[4pt]
+  \small\textcolor{footergray}{
   02041124645
   \textbar{}
   \href{mailto:elrsinclair@gmail.com}{elrsinclair@gmail.com}
   \textbar{}
   \href{https://www.linkedin.com/in/edward-sinclair/}{linkedin.com/in/edward-sinclair}
   \textbar{}
-  Auckland, NZ
+  Auckland, NZ}
 \end{center}
 
 % ── Summary ─────────────────────────────────────────────────
@@ -198,64 +199,68 @@ environments.
 \section{TECHNICAL SKILLS}
 
 \textbf{Software \& Programming}
-\vspace{2pt}
-
-\skillrow{Languages}{Python, C/C++, HTML, JavaScript, CSS (readily adaptable to others)}
-\skillrow{Tools \& Environments}{VSCode, Git (GitHub/GitLab), CI/CD pipelines, Arduino
+\begin{itemize}
+\item Languages: Python, C/C++, HTML, JavaScript, CSS (readily adaptable to others)
+\item Tools \& Environments: VSCode, Git (GitHub/GitLab), CI/CD pipelines, Arduino
   IDE, PlatformIO, Jupyter, Windows, Linux (Debian), Android Studio, CMake, Docker,
-  NVIDIA Isaac Sim, ROS2}
-\skillrow{Libraries \& Data}{OpenCV, PyTorch, Tkinter, Qt, FreeRTOS, Plotly, Pandas,
-  JSON, NumPy, Scikit-learn}
-\skillrow{Networking}{TCP/IP, HTTP APIs, SSH, NGINX, Tailscale, Wi-Fi, BLE}
-
+  NVIDIA Isaac Sim, ROS2
+\item Libraries \& Data: OpenCV, PyTorch, Tkinter, Qt, FreeRTOS, Plotly, Pandas,
+  JSON, NumPy, Scikit-learn
+\item Networking: TCP/IP, HTTP APIs, SSH, NGINX, Tailscale, Wi-Fi, BLE
+\end{itemize}
 \vspace{4pt}
+
 \textbf{Electrical \& Embedded Systems}
-\vspace{2pt}
-
-\skillrow{Hardware Platforms}{Arduino, Raspberry Pi, STM32, ESP32/ESP8266, NVIDIA Jetson}
-\skillrow{Interfaces \& Peripherals}{UART, I2C, SPI, PWM, ADC/DAC, servos, steppers,
-  BLDC motors, Hall effect sensors}
-\skillrow{Tools \& Skills}{Schematic design, breadboarding, soldering, KiCad, Altium,
-  circuit debugging}
-\skillrow{Instrumentation}{Oscilloscopes, multimeters, power supplies, signal generators}
-
+\begin{itemize}
+\item Hardware Platforms: Arduino, Raspberry Pi, STM32, ESP32/ESP8266, NVIDIA Jetson
+\item Interfaces \& Peripherals: UART, I2C, SPI, PWM, ADC/DAC, servos, steppers,
+  BLDC motors, Hall effect sensors
+\item Tools \& Skills: Schematic design, breadboarding, soldering, KiCad, Altium,
+  circuit debugging
+\item Instrumentation: Oscilloscopes, multimeters, power supplies, signal generators
+\end{itemize}
 \vspace{4pt}
-\textbf{Hardware}
-\vspace{2pt}
 
-\skillrow{CAD \& Design}{SolidWorks (weldments, macros), Onshape, SketchUp,
-  PrusaSlicer/Bambu Lab slicers, Blender, CAM tools (basic)}
-\skillrow{Mechanical Skills}{3D printing, mechanical assembly, laser cutting, material
-  knowledge, engineering workshop fabrication and safety}
+\textbf{Hardware}
+\begin{itemize}
+\item CAD \& Design: SolidWorks (weldments, macros), Onshape, SketchUp,
+  PrusaSlicer/Bambu Lab slicers, Blender, CAM tools (basic)
+\item Mechanical Skills: 3D printing, mechanical assembly, laser cutting, material
+  knowledge, engineering workshop fabrication and safety
+\end{itemize}
 
 % ── Key Skills and Competencies ──────────────────────────────
 \section{KEY SKILLS \& COMPETENCIES}
 
-\textbf{Problem Solving.}\enspace
+\textbf{Problem Solving}
+
 I take a practical approach across hardware and software issues, working methodically from
 root cause to solution. During my ME, a colleague was unable to activate the UAV chainsaw
 through their app. On inspection, I identified that the app was not correctly transmitting
 a WebSocket heartbeat, which the deadman switch required to enable the tool. Resolving this
 fixed the issue and validated that my safety system was functioning as intended.
 
-\vspace{4pt}
-\textbf{Adaptability \& Resilience.}\enspace
+\vspace{3pt}
+\textbf{Adaptability \& Resilience}
+
 With a broad mechatronics background and strong emotional intelligence, I am confident in
 shifting between hardware, software, support, and any other challenging tasks. I quickly
 learned new tools and systems outside my work scope throughout my engineering honours
 project, including telescope optics, TLE satellite tracking algorithms, and UI development,
 all to support the project team and keep progress moving.
 
-\vspace{4pt}
-\textbf{Communication.}\enspace
+\vspace{3pt}
+\textbf{Communication}
+
 I communicate technical concepts clearly and adapt my delivery to the audience. At Basis,
 when discrepancies emerged between coil behaviour on my test rig versus installed on PCBs,
 I worked directly with the electrical team to diagnose the issue, walking them through my
 test setup to identify the variable causing the discrepancy. I also presented my internship
 project to the entire company using entertaining analogies for the non-technical audience.
 
-\vspace{4pt}
-\textbf{Self-Management \& Motivation.}\enspace
+\vspace{3pt}
+\textbf{Self-Management \& Motivation}
+
 I work well independently and manage my time effectively to meet goals. My self-motivation
 is reflected in my 7.22/9.00 GPA and the positive feedback I have received from every
 previous employer.

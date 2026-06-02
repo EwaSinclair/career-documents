@@ -31,8 +31,8 @@
 \titleformat{\section}
   {\large\bfseries\color{accent}}
   {}{0em}{}
-  [\vspace{-4pt}\color{accent}\rule{\linewidth}{0.6pt}\vspace{2pt}]
-\titlespacing{\section}{0pt}{10pt}{4pt}
+  [\vspace{-10pt}\color{accent}\rule{\linewidth}{0.6pt}\vspace{0pt}]
+\titlespacing{\section}{0pt}{6pt}{1pt}
 
 % ── Lists ────────────────────────────────────────────────────
 \usepackage{enumitem}
@@ -73,7 +73,7 @@
 % ── Entry macro ──────────────────────────────────────────────
 % Usage: \cventry{Role | Organisation}{Date range}
 \newcommand{\cventry}[2]{%
-  \vspace{4pt}%
+  \vspace{2pt}%
   \noindent
   \begin{tabularx}{\linewidth}{@{}X r@{}}
     \textbf{#1} & \textbf{\textit{#2}}
